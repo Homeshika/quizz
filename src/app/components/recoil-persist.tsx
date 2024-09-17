@@ -4,7 +4,6 @@ import Head from 'next/head';
 import Quiz from './components/quiz';
 import { useState } from 'react';
 import { RecoilRoot } from 'recoil';
-import { Button } from '@/components/ui/button';
 
 function Home() {
   const [quizStarted, setQuizStarted] = useState(false);
@@ -15,7 +14,7 @@ function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div>
       <Head>
         <title>HTML and CSS Quiz</title>
       </Head>
@@ -24,9 +23,7 @@ function Home() {
           <Quiz />
         </RecoilRoot>
       ) : (
-        <Button onClick={handleStartQuiz} variant="outline">
-          Start Quiz
-        </Button>
+        <button onClick={handleStartQuiz}>Start Quiz</button>
       )}
     </div>
   );
